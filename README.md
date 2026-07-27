@@ -109,3 +109,4 @@ If you add more projects/events/news entries in `lib/data.ts`, just point
   and `app/globals.css` — change the `navy` / `gold` values there to
   re-theme the whole site at once.
 # rotaryclubofagbara
+# rotaryclubofagbara
