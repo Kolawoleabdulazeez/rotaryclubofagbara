@@ -10,11 +10,12 @@ const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
-  { href: "/events", label: "Events" },
-  { href: "/membership", label: "Membership" },
-  { href: "/contact", label: "Contact Us" },
+  { href: "/", label: "Events" },
+  { href: "/", label: "Membership" },
+  { href: "/", label: "Contact Us" },
 ];
 
+// check check
 export default function Navbar() {
   const router = useRouter();
   const pathname = router.pathname;
