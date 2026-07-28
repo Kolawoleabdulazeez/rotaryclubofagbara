@@ -1,3 +1,4 @@
+"use client";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
@@ -7,13 +8,12 @@ import Image from "next/image";
 export default function Footer() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "start start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [40, 0]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const y = useTransform(scrollYProgress, [0, 1], [30, 0]);
 
   return (
     <motion.footer
       ref={ref}
-      style={{ y, opacity, background: "linear-gradient(180deg, #123165 0%, #0E2A57 100%)" }}
+      style={{ y, background: "linear-gradient(180deg, #123165 0%, #0E2A57 100%)" }}
       className="mt-16 pt-12 pb-8"
     >
       <div className="max-w-[1180px] mx-auto px-5 md:px-7">
@@ -23,7 +23,7 @@ export default function Footer() {
               <Image src={RotaryLogoDesign} alt="Rotary Club Logo" height={40} />
             </Link>
             <p className="text-white/60 text-sm mb-3">Service Above Self since 1961.</p>
-     <div className="flex gap-2.5">
+       <div className="flex gap-2.5">
   {["𝕏", "f", "in", "ig"].map((s) => (
     <a
       key={s}
