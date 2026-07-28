@@ -1,25 +1,29 @@
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-import RotaryLogoDesign from "../../public/RotaryLogoDesign.svg"
+import RotaryLogoDesign from "../../public/RotaryLogoDesign.svg";
 import Image from "next/image";
 
 export default function Footer() {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "start start"] });
+  const y = useTransform(scrollYProgress, [0, 1], [40, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
   return (
-    <footer
+    <motion.footer
+      ref={ref}
+      style={{ y, opacity, background: "linear-gradient(180deg, #123165 0%, #0E2A57 100%)" }}
       className="mt-16 pt-12 pb-8"
-      style={{ background: "linear-gradient(180deg, #123165 0%, #0E2A57 100%)" }}
     >
       <div className="max-w-[1180px] mx-auto px-5 md:px-7">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
-           <Link href="/" className="flex items-center gap-3 rounded-full pl-2 pr-4 py-1.5">
-  <Image
-    src={RotaryLogoDesign}
-    alt="Rotary Club Logo"
-    height={40}
-  />
-</Link>
+            <Link href="/" className="flex items-center gap-3 rounded-full pl-2 pr-4 py-1.5">
+              <Image src={RotaryLogoDesign} alt="Rotary Club Logo" height={40} />
+            </Link>
             <p className="text-white/60 text-sm mb-3">Service Above Self since 1961.</p>
-            <div className="flex gap-2.5">
+     <div className="flex gap-2.5">
   {["𝕏", "f", "in", "ig"].map((s) => (
     <a
       key={s}
@@ -38,9 +42,7 @@ export default function Footer() {
               {[["About Us", "/about"], ["Projects", "/projects"], ["Events", "/events"], ["News", "/news"]].map(
                 ([label, href]) => (
                   <li key={href}>
-                    <Link href={href} className="text-white/60 text-sm hover:text-gold-soft">
-                      {label}
-                    </Link>
+                    <Link href={href} className="text-white/60 text-sm hover:text-gold-soft">{label}</Link>
                   </li>
                 )
               )}
@@ -53,9 +55,7 @@ export default function Footer() {
               {[["Become a Member", "/membership"], ["Donate", "/donate"], ["FAQ", "/faq"], ["Contact", "/contact"]].map(
                 ([label, href]) => (
                   <li key={href}>
-                    <Link href={href} className="text-white/60 text-sm hover:text-gold-soft">
-                      {label}
-                    </Link>
+                    <Link href={href} className="text-white/60 text-sm hover:text-gold-soft">{label}</Link>
                   </li>
                 )
               )}
@@ -75,6 +75,6 @@ export default function Footer() {
           <Link href="#" className="hover:text-gold-soft">Privacy Policy</Link>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

@@ -3,7 +3,5 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/events": "pages/events.js",
-  "/about": "pages/about.js",
-  "/membership": "pages/membership.js"
+  "/donate": "pages/donate.js"
 }

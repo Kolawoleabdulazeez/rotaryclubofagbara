@@ -55,7 +55,7 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center gap-2.5">
       
-            <Link href="/donate" className="btn-gold">
+            <Link href="/" className="btn-gold">
               Donate
             </Link>
           </div>
@@ -71,7 +71,7 @@ export default function Navbar() {
 
         {open && (
           <div className="glass-dark mt-2.5 p-3 flex flex-col gap-1 md:hidden">
-            {[...links, { href: "/donate", label: "Donate" }, { href: "/faq", label: "FAQ" }].map(
+            {[...links, { href: "/", label: "Donate" }, { href: "/", label: "FAQ" }].map(
               (l) => (
                 <Link
                   key={l.href + l.label}
