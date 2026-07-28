@@ -16,6 +16,7 @@ const links = [
 ];
 
 // check check
+//new push this is new push comment commment
 export default function Navbar() {
   const router = useRouter();
   const pathname = router.pathname;
