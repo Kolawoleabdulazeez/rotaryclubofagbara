@@ -1,10 +1,13 @@
 import type { AppProps } from "next/app";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import Head from "next/head";
 import { Playfair_Display, Inter } from "next/font/google";
 import "@/styles/globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ToastProvider from "@/components/ui/ToastProvider";
+import PageLoader from "@/components/ui/PageLoader";
 
 const display = Playfair_Display({
   subsets: ["latin"],
@@ -19,8 +22,32 @@ const sans = Inter({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // initial page load — hide once mounted
+    const initialTimer = setTimeout(() => setLoading(false), 900);
+
+    const handleStart = () => setLoading(true);
+    const handleDone = () => setLoading(false);
+
+    router.events.on("routeChangeStart", handleStart);
+    router.events.on("routeChangeComplete", handleDone);
+    router.events.on("routeChangeError", handleDone);
+
+    return () => {
+      clearTimeout(initialTimer);
+      router.events.off("routeChangeStart", handleStart);
+      router.events.off("routeChangeComplete", handleDone);
+      router.events.off("routeChangeError", handleDone);
+    };
+  }, [router]);
+
   return (
     <div className={`${display.variable} ${sans.variable} font-sans min-h-screen relative`}>
+      <PageLoader loading={loading} />
+
       <div
         className="fixed -inset-[15%] pointer-events-none z-0 animate-breathe"
         style={{

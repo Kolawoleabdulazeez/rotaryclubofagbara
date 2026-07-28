@@ -8,8 +8,7 @@ export default function Sponsors() {
       <span className="eyebrow mb-5 block">Our Partners</span>
       <div className="glass p-6 overflow-hidden">
         <div
-          className="flex gap-4 w-max"
-          style={{ animation: "marquee 22s linear infinite" }}
+          className="flex w-max gap-4 animate-[marquee_22s_linear_infinite]"
         >
           {doubled.map((s, i) => (
             <div
