@@ -1,17 +1,25 @@
-// ProjectCard.tsx
 import Link from "next/link";
+import { motion } from "framer-motion";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import type { Project } from "@/lib/data";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="glass overflow-hidden flex flex-col">
-      <ImagePlaceholder
-        src={project.image}
-        alt={project.title}
-        label={`${project.category} project photo`}
-        className="h-[150px]"
-      />
+    <div className="glass overflow-hidden flex flex-col group">
+      <div className="overflow-hidden h-[150px]">
+        <motion.div
+          className="h-full"
+          whileHover={{ scale: 1.08 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+        >
+          <ImagePlaceholder
+            src={project.image}
+            alt={project.title}
+            label={`${project.category} project photo`}
+            className="h-[150px]"
+          />
+        </motion.div>
+      </div>
       <div className="p-5">
         <span className="tag">{project.category}</span>
         <h3 className="font-display text-ink text-[1.08rem] mt-2">{project.title}</h3>
@@ -26,12 +34,14 @@ export default function ProjectCard({ project }: { project: Project }) {
           >
             {project.status === "active" ? "Ongoing" : "Completed"}
           </span>
-          <Link
-            href={`/projects/${project.slug}`}
-            className="text-gold text-sm font-semibold"
-          >
-            Read More →
-          </Link>
+          <motion.span whileHover={{ x: 3 }} transition={{ type: "spring", stiffness: 400, damping: 20 }}>
+            <Link
+              href={`/projects/${project.slug}`}
+              className="text-gold text-sm font-semibold inline-block"
+            >
+              Read More →
+            </Link>
+          </motion.span>
         </div>
       </div>
     </div>
