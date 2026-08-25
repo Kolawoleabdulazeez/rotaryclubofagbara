@@ -35,7 +35,7 @@ export default function App({ Component, pageProps }: AppProps) {
     router.events.on("routeChangeStart", handleStart);
     router.events.on("routeChangeComplete", handleDone);
     router.events.on("routeChangeError", handleDone);
-
+    
     return () => {
       clearTimeout(initialTimer);
       router.events.off("routeChangeStart", handleStart);

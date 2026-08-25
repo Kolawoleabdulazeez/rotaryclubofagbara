@@ -10,9 +10,9 @@ const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
-  { href: "/", label: "Events" },
-  { href: "/", label: "Membership" },
-  { href: "/", label: "Contact Us" },
+  { href: "/events", label: "Events" },
+  { href: "/membership", label: "Membership" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 export default function Navbar() {
@@ -64,7 +64,7 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden md:flex items-center gap-2.5">
-            <Link href="/" className="btn-gold">
+            <Link href="/donate" className="btn-gold">
               Donate
             </Link>
           </div>
@@ -87,7 +87,7 @@ export default function Navbar() {
               transition={{ duration: 0.25, ease: "easeInOut" }}
               className="glass-dark mt-2.5 p-3 flex flex-col gap-1 md:hidden overflow-hidden"
             >
-              {[...links, { href: "/", label: "Donate" }, { href: "/", label: "FAQ" }].map(
+              {[...links, { href: "/donate", label: "Donate" }, { href: "/", label: "FAQ" }].map(
                 (l) => (
                   <Link
                     key={l.href + l.label}

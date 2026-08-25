@@ -1,29 +1,55 @@
 import ContactForm from "@/components/forms/ContactForm";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
+import { Reveal } from "@/components/motion/Reveal";
+import { TiltCard } from "@/components/motion/TiltCard";
+import { MapPin, Clock, Mail, Phone } from "lucide-react";
+
+const details = [
+  { icon: MapPin, text: "Agbara Community Hall, 14 Freedom Way, Agbara" },
+  { icon: Clock, text: "Meetings every Tuesday, 7:30am" },
+  { icon: Mail, text: "hello@rotaryagbara.org" },
+  { icon: Phone, text: "+234 800 555 0192" },
+];
 
 export default function ContactPage() {
   return (
     <section className="py-14">
-      <div className="max-w-[640px] mb-9">
-        <span className="eyebrow">Contact Us</span>
-        <h2 className="font-display text-white text-[2rem] mt-2.5">Come say hello.</h2>
-      </div>
+      <Reveal>
+        <div className="max-w-[640px] mb-9">
+          <span className="eyebrow">Contact Us</span>
+          <h2 className="font-display text-ink text-[2rem] mt-2.5">Come say hello.</h2>
+        </div>
+      </Reveal>
 
       <div className="grid md:grid-cols-2 gap-5">
-        <div className="glass p-8">
-          <h3 className="text-white font-semibold text-base mb-4">Details</h3>
-          <p className="text-white/70 text-sm mb-2.5">📍 Agbara Community Hall, 14 Freedom Way, Agbara</p>
-          <p className="text-white/70 text-sm mb-2.5">🕐 Meetings every Tuesday, 7:30am</p>
-          <p className="text-white/70 text-sm mb-2.5">✉️ hello@rotaryagbara.org</p>
-          <p className="text-white/70 text-sm mb-5">📞 +234 800 555 0192</p>
-          <ImagePlaceholder
-            src="/images/contact/map.jpg"
-            alt="Map to Agbara Community Hall"
-            label="Map / static map screenshot"
-            className="h-44 rounded-2xl"
-          />
-        </div>
-        <ContactForm />
+        <Reveal>
+          <TiltCard className="glass p-8 h-full">
+            <h3 className="text-ink font-semibold text-base mb-4">Details</h3>
+            <div className="space-y-3.5 mb-5">
+              {details.map((d, i) => {
+                const Icon = d.icon;
+                return (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[rgba(247,168,27,0.1)] flex items-center justify-center mt-0.5">
+                      <Icon size={15} className="text-gold" />
+                    </div>
+                    <p className="text-ink-soft text-sm pt-1.5">{d.text}</p>
+                  </div>
+                );
+              })}
+            </div>
+            <ImagePlaceholder
+              src="/images/contact/map.jpg"
+              alt="Map to Agbara Community Hall"
+              label="Map / static map screenshot"
+              className="h-44 rounded-2xl"
+            />
+          </TiltCard>
+        </Reveal>
+
+        <Reveal delay={0.15}>
+          <ContactForm />
+        </Reveal>
       </div>
     </section>
   );
