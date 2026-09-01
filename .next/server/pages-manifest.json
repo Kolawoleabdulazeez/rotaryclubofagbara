@@ -1,12 +1,8 @@
 {
+  "/_error": "pages/_error.js",
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
-  "/_error": "pages/_error.js",
   "/": "pages/index.js",
   "/about": "pages/about.js",
-  "/events": "pages/events.js",
-  "/projects": "pages/projects.js",
-  "/contact": "pages/contact.js",
-  "/donate": "pages/donate.js",
-  "/membership": "pages/membership.js"
+  "/contact": "pages/contact.js"
 }
