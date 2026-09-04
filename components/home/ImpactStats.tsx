@@ -2,11 +2,11 @@ import { motion, Variants } from "framer-motion";
 import { AnimatedCounter } from "@/components/motion/AnimatedCounter";
 
 const stats = [
-  { num: "184", label: "Active Members" },
-  { num: "62", label: "Projects Completed" },
-  { num: "14", label: "Communities Reached" },
-  { num: "$2.1M", label: "Funds Raised" },
-  { num: "9,400", label: "Volunteer Hours" },
+  { num: "41", label: "Years of Service" },
+  { num: "64", label: "Active Members" },
+  { num: "16", label: "Projects (Last 2 Years)" },
+  { num: "6", label: "Communities Reached" },
+  { num: "₦58.6M", label: "Income Raised (2025-26)" },
 ];
 
 const container: Variants = {

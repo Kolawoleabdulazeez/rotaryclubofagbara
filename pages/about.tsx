@@ -5,7 +5,7 @@ import { TiltCard } from "@/components/motion/TiltCard";
 import { motion } from "framer-motion";
 import { CheckCircle2, Scale, Heart, TrendingUp } from "lucide-react";
 
-const values = ["Fellowship", "Integrity", "Diversity", "Service"];
+const values = ["Acquaintance", "Ethics", "Service", "Peace"];
 
 const fourWayTest = [
   { icon: CheckCircle2, q: "Is it the TRUTH?" },
@@ -17,16 +17,16 @@ const fourWayTest = [
 export default function AboutPage() {
   return (
     <>
-      <section className="py-14">
+         <section className="py-14">
         <Reveal>
           <div className="max-w-[640px] mb-9">
             <span className="eyebrow">About Us</span>
             <h2 className="font-display text-ink text-[2rem] mt-2.5">
-              Six decades of showing up.
+              Four decades of showing up.
             </h2>
             <p className="text-ink-soft mt-3">
-              What started as twelve local business owners meeting over breakfast is now
-              a 184-member chapter spanning every corner of Agbara&apos;s professional
+              What started as twenty-three local business and professional leaders in 1985 is now
+              a 64-member chapter spanning every corner of Agbara&apos;s professional
               community.
             </p>
           </div>
@@ -42,8 +42,9 @@ export default function AboutPage() {
             <TiltCard className="glass p-7 h-full">
               <span className="eyebrow">Mission</span>
               <h3 className="font-display text-ink text-xl mt-2.5">
-                We provide service to others, promote integrity, and advance world
-                understanding, goodwill and peace through our fellowship.
+                To execute service projects in Education &amp; Literacy, Water &amp; Sanitation,
+                and Maternal &amp; Child Health and Disease Prevention in our immediate
+                communities — and to help Agbara sustain peace and harmony.
               </h3>
             </TiltCard>
           </motion.div>
@@ -51,15 +52,15 @@ export default function AboutPage() {
             <TiltCard className="glass p-7 h-full">
               <span className="eyebrow">Vision</span>
               <h3 className="font-display text-ink text-xl mt-2.5">
-                Together, we see a world where people unite and take action to create
-                lasting change — across the globe, in our communities, and in ourselves.
+                To be the best mega club in Agbara and its environs — supporting our
+                communities in transforming lives across Rotary&apos;s seven areas of focus.
               </h3>
             </TiltCard>
           </motion.div>
         </RevealGroup>
       </section>
 
-      <section className="py-14">
+          <section className="py-14">
         <Reveal>
           <div className="max-w-[640px] mb-8">
             <span className="eyebrow">Core Values</span>
@@ -82,7 +83,7 @@ export default function AboutPage() {
         </RevealGroup>
       </section>
 
-      <section className="py-14">
+     <section className="py-14">
         <Reveal>
           <div className="max-w-[640px] mb-8">
             <span className="eyebrow">Our Ethical Standard</span>

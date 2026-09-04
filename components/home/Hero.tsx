@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
-import MembersImage from "../../public/windowStaff.jpg";
+import MembersImage from "../../public/heroImage.jpeg";
 import { Magnetic } from "@/components/motion/MagneticButton";
 import { SplitLine } from "@/components/motion/SplitText";
 import { GoldParticles } from "@/components/motion/GoldParticles";
@@ -21,14 +21,14 @@ export default function Hero() {
               transition={{ duration: 0.5 }}
               className="eyebrow-light block text-[0.7rem] sm:text-[0.78rem]"
             >
-              Rotary Club of Agbara · District 9110
+              Rotary Club of Agbara · District 9111 · Chartered 1985
             </motion.span>
 
             <h1 className="font-display text-white text-[1.9rem] sm:text-[2.3rem] md:text-[2.9rem] leading-[1.12] md:leading-[1.08] mt-3 md:mt-4">
-              <SplitLine text="Neighbors doing" delay={0.2} />
+              <SplitLine text="Creating" delay={0.2} />
               <br />
               <span className="text-gold-soft">
-                <SplitLine text="real, lasting good." delay={0.8} />
+                <SplitLine text="lasting impact." delay={0.8} />
               </span>
             </h1>
 
@@ -39,8 +39,9 @@ export default function Hero() {
               className="text-white text-[0.95rem] sm:text-[1.05rem] md:text-[1.1rem] mt-3 md:mt-4 max-w-[480px]"
             >
               We&apos;re a local group of volunteers, professionals and business owners
-              funding clean water, schools and health programs — right here in Agbara
-              and around the world.
+              serving Agbara and its environs through education, clean water and
+              sanitation, and maternal &amp; child health programs — building peace
+              and lasting change in the communities we call home.
             </motion.p>
 
             <motion.div
@@ -91,7 +92,7 @@ export default function Hero() {
                 transition={{ duration: 2, repeat: Infinity }}
               />
               <span className="text-white text-[0.7rem] font-semibold">
-                184 active members, one mission
+                64 active members, one mission
               </span>
             </motion.div>
 
@@ -107,7 +108,7 @@ export default function Hero() {
                 animate={{ scale: [1, 1.4, 1], opacity: [1, 0.6, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
               />
-              <span className="text-white text-xs font-semibold">184 active members, one mission</span>
+              <span className="text-white text-xs font-semibold">64 active members, one mission</span>
             </motion.div>
           </div>
         </div>
