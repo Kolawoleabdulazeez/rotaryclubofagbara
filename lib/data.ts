@@ -198,7 +198,7 @@ export const leaders: Leader[] = [
   { name: "Rtn. Emmanuel Omokaro", role: "Treasurer", photo: "/emmanuel.png" },
   { name: "Rtn. Paul Onabanjo", role: "Service Project Chair", photo: "/Paul.png" },
   { name: "Rtn. Ademuyiwa Ashimolowo", role: "Foundation Chair", photo: "/ademuyiwa.png",crop:"center 1%", zoom:1 },
-  { name: "Rtn. Lucky Akpos Arhere", role: "Membership Chair", photo: "/Lucky.png" },
+  { name: "Rtn. Lucky Akpos Arhere", role: "Membership Chair", photo: "/lucky.png" },
   { name: "Rtn. Abdur-Rahman Wahab", role: "Club Admin Chair", photo: "/wahab.png" ,crop:"center 1%", zoom:1},
   { name: "Rtn. Folashade Aina", role: "Public Image Chair", photo: "/folashade.png" },
   { name: "Rtn. Anthony Omoragbon", role: "Youth Service Chair", photo: "/anthony.png", crop: "center 30%" },
