@@ -5,10 +5,10 @@ import { TiltCard } from "@/components/motion/TiltCard";
 import { MapPin, Clock, Mail, Phone } from "lucide-react";
 
 const details = [
-  { icon: MapPin, text: "Agbara Community Hall, 14 Freedom Way, Agbara" },
+  { icon: MapPin, text: "De Oasis hotels and suite, Ilaro road, Agbara estate, Agbara, Ogun State" },
   { icon: Clock, text: "Meetings every Tuesday, 7:30am" },
-  { icon: Mail, text: "hello@rotaryagbara.org" },
-  { icon: Phone, text: "+234 800 555 0192" },
+  { icon: Mail, text: "rcagbara@gmail.com" },
+  { icon: Phone, text: "+234 816 922 4603" },
 ];
 
 export default function ContactPage() {

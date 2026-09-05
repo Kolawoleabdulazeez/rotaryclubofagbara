@@ -2,6 +2,7 @@ import Link from "next/link";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import { Reveal } from "@/components/motion/Reveal";
 import { TiltCard } from "@/components/motion/TiltCard";
+import PresidentEbose from "../../public/ebosele.png"
 
 export default function MissionPreview() {
   return (
@@ -36,7 +37,7 @@ export default function MissionPreview() {
         <Reveal delay={0.22}>
           <TiltCard className="glass p-7 flex gap-4.5 h-full">
         <ImagePlaceholder
-  src="/images/leaders/president-philip-ebosele.jpg"
+  src={PresidentEbose}
   alt="Club President, Philip Ebosele"
   label="President photo"
   className="w-20 h-20 rounded-full flex-shrink-0"

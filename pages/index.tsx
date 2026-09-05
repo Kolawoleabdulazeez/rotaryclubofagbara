@@ -7,11 +7,13 @@ import Newsletter from "@/components/home/Newsletter";
 import ProjectCard from "@/components/projects/ProjectCard";
 import NewsCard from "@/components/news/NewsCard";
 import EventRow from "@/components/events/EventRow";
-import { projects, news, upcomingEvents } from "@/lib/data";
+import { projects, news, upcomingEvents, heroSlides } from "@/lib/data";
 import Link from "next/link";
 import { Reveal, RevealGroup, itemVariant } from "@/components/motion/Reveal";
 import { TiltCard } from "@/components/motion/TiltCard";
 import { motion } from "framer-motion";
+import MeetingCountdownCard from "@/components/events/MeetingCountdownCard";
+import MeetingRow from "@/components/events/MeetingRow";
 
 export default function HomePage() {
   return (
@@ -47,12 +49,17 @@ export default function HomePage() {
   </Reveal>
 
   <RevealGroup className="glass divide-y divide-[rgba(11,42,91,0.1)] p-2" stagger={0.12}>
-    {upcomingEvents.slice(0, 2).map((e) => (
-      <motion.div key={e.slug} variants={itemVariant}>
-        <EventRow event={e} />
-      </motion.div>
-    ))}
-  </RevealGroup>
+  <motion.div key="weekly-meeting" variants={itemVariant}>
+    <MeetingRow slide={heroSlides[0]} />
+  </motion.div>
+
+  {upcomingEvents.slice(0, 2).map((e) => (
+    <motion.div key={e.slug} variants={itemVariant}>
+      <EventRow event={e} />
+    </motion.div>
+  ))}
+</RevealGroup>
+
 
   <Reveal delay={0.15}>
     <div className="mt-5">

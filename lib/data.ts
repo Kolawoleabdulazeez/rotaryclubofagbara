@@ -86,7 +86,7 @@ export const upcomingEvents: EventItem[] = [
     slug: "annual-charity-gala",
     day: "12",
     month: "Aug",
-    title: "Annual Charity Gala",
+    title: "Fundraising and Investiture Ceremony",
     venue: "Agbara Grand Hotel",
     time: "6:30 PM",
     image: "/images/events/charity-gala.jpg",
@@ -99,16 +99,7 @@ export const upcomingEvents: EventItem[] = [
     venue: "Eastern Ward Community Field",
     time: "9:00 AM",
     image: "/images/events/groundbreaking.jpg",
-  },
-  {
-    slug: "membership-open-house",
-    day: "05",
-    month: "Sep",
-    title: "Membership Open House",
-    venue: "Agbara Community Hall",
-    time: "7:30 AM",
-    image: "/images/events/open-house.jpg",
-  },
+  }
 ];
 
 export const pastEvents: EventItem[] = [
@@ -132,6 +123,31 @@ export const pastEvents: EventItem[] = [
   },
 ];
 
+
+// lib/data.ts
+export type MeetingSlide = {
+  type: "meeting";
+  title: string;
+  venue: string;
+  weekday: number;   // 0 = Sunday
+  startHour: number; // 18
+  startMinute: number; // 30
+  endHour: number;   // 19
+  endMinute: number; // 0
+};
+
+export const heroSlides: MeetingSlide[] = [
+  {
+    type: "meeting",
+    title: "Next Weekly Meeting (Tuesday)",
+    venue: "De Oasis Hotel & Suite, Ilaro Road, Agbara Estate",
+    weekday: 2,
+    startHour: 18,
+    startMinute: 30,
+    endHour: 19,
+    endMinute: 0,
+  },
+];
 export type NewsItem = {
   slug: string;
   tag: string;
@@ -167,19 +183,32 @@ export const news: NewsItem[] = [
 export type Leader = {
   name: string;
   role: string;
-  bio: string;
   photo: string;
+  crop?: string; 
+    zoom?: number;
+
 };
 
 export const leaders: Leader[] = [
-  { name: "Adaeze Nwosu", role: "President", bio: "15-year member, healthcare administrator.", photo: "/images/leaders/adaeze-nwosu.jpg" },
-  { name: "Tunde Bakare", role: "President-Elect", bio: "Civil engineer, leads the Water for Agbara program.", photo: "/images/leaders/tunde-bakare.jpg" },
-  { name: "Miriam Osei", role: "Secretary", bio: "Attorney, joined in 2018.", photo: "/images/leaders/miriam-osei.jpg" },
-  { name: "James Okoro", role: "Treasurer", bio: "CPA and small-business owner.", photo: "/images/leaders/james-okoro.jpg" },
-  { name: "Farida Musa", role: "Director, Youth Programs", bio: "Runs the RYLA and Interact partnerships.", photo: "/images/leaders/farida-musa.jpg" },
-  { name: "Chuka Eze", role: "Director, Community Service", bio: "Coordinates all local project committees.", photo: "/images/leaders/chuka-eze.jpg" },
+  { name: "Rtn. Philip Osemhanre Ebosele", role: "President", photo: "/ebosele.png", crop: "center 0%", zoom: 1 },
+  { name: "Rtn. Uchenna James Okafor", role: "Vice President", photo: "/UCHENNA.png" },
+  { name: "Rtn. Godwin Ogwara", role: "President Elect", photo: "/Godwin.png", crop: "center 0%", zoom: 1},
+  { name: "Rtn. Odunayo Fati", role: "Immediate Past President", photo: "/odunayo.png", crop: "center 1%", zoom: 1 },
+  { name: "Rtn. Mathew Edigbe PHF", role: "Secretary", photo: "/Mathew.png" },
+  { name: "Rtn. Emmanuel Omokaro", role: "Treasurer", photo: "/emmanuel.png" },
+  { name: "Rtn. Paul Onabanjo", role: "Service Project Chair", photo: "/Paul.png" },
+  { name: "Rtn. Ademuyiwa Ashimolowo", role: "Foundation Chair", photo: "/ademuyiwa.png",crop:"center 1%", zoom:1 },
+  { name: "Rtn. Lucky Akpos Arhere", role: "Membership Chair", photo: "/Lucky.png" },
+  { name: "Rtn. Abdur-Rahman Wahab", role: "Club Admin Chair", photo: "/wahab.png" ,crop:"center 1%", zoom:1},
+  { name: "Rtn. Folashade Aina", role: "Public Image Chair", photo: "/folashade.png" },
+  { name: "Rtn. Anthony Omoragbon", role: "Youth Service Chair", photo: "/anthony.png", crop: "center 30%" },
+  { name: "Rtn. Rita Eze", role: "We Care Chair", photo: "/rita.png" },
+  { name: "Rtn. Jerome Oyeniyi", role: "Rotary International / Discon Chair", photo: "/jerome.png" },
+  { name: "Rtn. Frederick Egbamuno", role: "Club Learning Facilitator", photo: "/frederick.png", crop: "center 25%" },
+  { name: "Rtn. Victor Itoya", role: "Sergent at Arms", photo: "/victor.png", crop:"center 1%", zoom:1 },
+  { name: "Rtn. Pascal Ikenna Orisakwe", role: "Board Adviser 1", photo: "/pascal.png" },
+  { name: "Rtn. Ajo Abidemi", role: "Board Adviser 2", photo: "/abiola.png" },
 ];
-
 export const testimonials = [
   {
     quote:
@@ -232,9 +261,62 @@ export const faqs = [
 ];
 
 export const timeline = [
-  { year: "1961", title: "Club Chartered", desc: "Twelve founding members receive their charter from Rotary International District 91." },
-  { year: "1984", title: "First International Project", desc: "Partnered with a sister club in Kaduna to fund a rural primary school." },
-  { year: "2003", title: "Water for Agbara Launch", desc: "Long-running clean water initiative begins, now serving 14 communities." },
-  { year: "2016", title: "Rotaract Chapter Founded", desc: "Young professionals branch launched to grow the next generation of members." },
-  { year: "2024", title: "$2M Lifetime Giving", desc: "Club crosses two million dollars raised across all humanitarian programs." },
+  {
+    year: "1985",
+    title: "Club Chartered",
+    desc: "Chartered on April 2, 1985 by sponsor club Rotary Club of Badagry, with founding Charter President Rtn. Joe Olabode, as a member of Rotary International District 911.",
+  },
+  {
+    year: "1987",
+    title: "Weathering a Financial Crisis",
+    desc: "Past President Rtn. Francis Adeoshun personally settled the club's outstanding dues, saving its Rotary International membership from delisting.",
+  },
+  {
+    year: "2003",
+    title: "A New Generation of Members",
+    desc: "President Dr. Pascal Ogbolu recruited a wave of young professionals from Nestlé Nigeria, reshaping the club's energy and future leadership.",
+  },
+  {
+    year: "2020",
+    title: "Membership Surge",
+    desc: "Under President Rtn. Lucky A. Arhere's 'Open Opportunities' year, intensive recruitment drove the club's membership to new highs.",
+  },
+  {
+    year: "2024",
+    title: "Joining District 9111",
+    desc: "Following the split of District 9110, Rotary Club of Agbara became a member of the newly created District 9111 on July 1, 2024.",
+  },
+  {
+    year: "2026",
+    title: "Satellite Club Launched",
+    desc: "Under President Rtn. Odunayo Fati, the club chartered the Rotary Satellite Club of Agbara OPIC Estate, admitted to Rotary on June 23, 2026.",
+  },
 ];
+
+
+
+export function getNextMeetingDate(slide: MeetingSlide): Date {
+  const now = new Date();
+  const next = new Date(now);
+  next.setHours(slide.startHour, slide.startMinute, 0, 0);
+
+  const daysUntil = (slide.weekday - now.getDay() + 7) % 7;
+  next.setDate(now.getDate() + daysUntil);
+
+  // if today is the meeting day but the meeting already started/ended, jump to next week
+  if (daysUntil === 0 && next.getTime() <= now.getTime()) {
+    next.setDate(next.getDate() + 7);
+  }
+
+  return next;
+}
+
+export function formatMeetingDisplay(slide: MeetingSlide, date: Date): string {
+  const dateStr = date.toLocaleDateString("en-US", { month: "long", day: "numeric" });
+  const fmt = (h: number, m: number) => {
+    const period = h >= 12 ? "pm" : "am";
+    const hour12 = h % 12 === 0 ? 12 : h % 12;
+    return m === 0 ? `${hour12}:00 ${period}` : `${hour12}:${m.toString().padStart(2, "0")} ${period}`;
+  };
+  return `${dateStr} @ ${fmt(slide.startHour, slide.startMinute)} - ${fmt(slide.endHour, slide.endMinute)}`;
+}

@@ -24,11 +24,12 @@ export default function AboutPage() {
             <h2 className="font-display text-ink text-[2rem] mt-2.5">
               Four decades of showing up.
             </h2>
-            <p className="text-ink-soft mt-3">
-              What started as twenty-three local business and professional leaders in 1985 is now
-              a 64-member chapter spanning every corner of Agbara&apos;s professional
-              community.
-            </p>
+        <p className="text-ink-soft mt-3">
+  Chartered on April 2, 1985 by the Rotary Club of Badagry, we started as a small
+  group of professionals from Agbara&apos;s industrial and residential community.
+  Four decades later, we&apos;re still showing up — for our members and for the
+  neighborhoods we serve.
+</p>
           </div>
         </Reveal>
         <Reveal delay={0.15}>
