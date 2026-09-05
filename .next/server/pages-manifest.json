@@ -2,8 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/projects/[slug]": "pages/projects/[slug].js",
+  "/": "pages/index.js",
   "/projects": "pages/projects.js",
-  "/membership": "pages/membership.js",
-  "/events": "pages/events.js",
-  "/contact": "pages/contact.js"
+  "/donate": "pages/donate.js"
 }

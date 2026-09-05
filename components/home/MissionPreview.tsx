@@ -36,20 +36,23 @@ export default function MissionPreview() {
 
         <Reveal delay={0.22}>
           <TiltCard className="glass p-7 flex gap-4.5 h-full">
-        <ImagePlaceholder
-  src={PresidentEbose}
-  alt="Club President, Philip Ebosele"
-  label="President photo"
-  className="w-20 h-20 rounded-full flex-shrink-0"
-/>
+              <ImagePlaceholder
+        src={PresidentEbose}
+        alt="Club President, Philip Ebosele"
+        label="President photo"
+        className="w-20 h-20 mr-4 rounded-full flex-shrink-0"
+        fit="cover"
+        objectPosition="center 10%"
+      />
 <div>
   <span className="eyebrow mb-1.5">A Note From Our President</span>
   <p className="text-ink-soft text-sm mt-2 italic">
-    [Quote not available in source document — needs a real statement from
-    Philip Ebosele before this goes live]
+    "This year, we create lasting impact — not just through service, but
+    through growth and sustainability that outlives our tenure. Rotary is
+    'We,' not 'I.' Let's turn this theme into action."
   </p>
   <p className="text-gold text-[0.82rem] mt-2.5 font-semibold">
-    — Philip Ebosele, Club President
+    — Rtn. Philip Osemhanre Ebosele, Club President
   </p>
 </div>
           </TiltCard>

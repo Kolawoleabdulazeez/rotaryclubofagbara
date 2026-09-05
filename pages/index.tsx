@@ -82,7 +82,7 @@ export default function HomePage() {
       </section>
 
       <Testimonials />
-      <Sponsors />
+      {/* <Sponsors /> */}
       <Newsletter />
     </>
   );

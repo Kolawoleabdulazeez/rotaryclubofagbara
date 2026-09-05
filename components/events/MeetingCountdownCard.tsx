@@ -1,8 +1,8 @@
-// components/ui/MeetingCountdownCard.tsx
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { formatMeetingDisplay, getNextMeetingDate, type MeetingSlide } from "@/lib/data";
+import type { MeetingSlide } from "@/lib/data";
+import { getNextMeetingDate, formatMeetingDisplay } from "@/lib/data";
 
 function getTimeLeft(target: Date) {
   const diff = Math.max(0, target.getTime() - Date.now());
@@ -15,7 +15,7 @@ function getTimeLeft(target: Date) {
 
 const pad = (n: number) => n.toString().padStart(2, "0");
 
-function CountdownBox({ value, label }: { value: number; label: string }) {
+function CountdownBox({ value, label }: { value: number | null; label: string }) {
   return (
     <motion.div
       whileHover={{ scale: 1.04 }}
@@ -23,7 +23,7 @@ function CountdownBox({ value, label }: { value: number; label: string }) {
       className="bg-gold rounded-xl w-[72px] h-[72px] sm:w-20 sm:h-20 flex flex-col items-center justify-center flex-shrink-0"
     >
       <div className="font-display text-white text-2xl font-bold leading-none">
-        {pad(value)}
+        {value === null ? "--" : pad(value)}
       </div>
       <div className="text-[0.65rem] uppercase tracking-wide text-white/90 mt-1">
         {label}
@@ -33,15 +33,17 @@ function CountdownBox({ value, label }: { value: number; label: string }) {
 }
 
 export default function MeetingCountdownCard({ slide }: { slide: MeetingSlide }) {
-  // recompute the next occurrence only when it's actually passed
+  const [mounted, setMounted] = useState(false);
   const [target, setTarget] = useState(() => getNextMeetingDate(slide));
-  const [timeLeft, setTimeLeft] = useState(() => getTimeLeft(target));
+  const [timeLeft, setTimeLeft] = useState<ReturnType<typeof getTimeLeft> | null>(null);
 
   useEffect(() => {
+    setMounted(true);
+    setTimeLeft(getTimeLeft(target));
+
     const id = setInterval(() => {
       const now = Date.now();
       if (now >= target.getTime()) {
-        // meeting time has passed — roll to next week's occurrence
         setTarget(getNextMeetingDate(slide));
         return;
       }
@@ -74,10 +76,10 @@ export default function MeetingCountdownCard({ slide }: { slide: MeetingSlide })
       </div>
 
       <div className="flex gap-3 flex-shrink-0">
-        <CountdownBox value={timeLeft.days} label="days" />
-        <CountdownBox value={timeLeft.hours} label="hours" />
-        <CountdownBox value={timeLeft.min} label="min" />
-        <CountdownBox value={timeLeft.sec} label="sec" />
+        <CountdownBox value={mounted ? timeLeft?.days ?? null : null} label="days" />
+        <CountdownBox value={mounted ? timeLeft?.hours ?? null : null} label="hours" />
+        <CountdownBox value={mounted ? timeLeft?.min ?? null : null} label="min" />
+        <CountdownBox value={mounted ? timeLeft?.sec ?? null : null} label="sec" />
       </div>
     </div>
   );

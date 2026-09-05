@@ -28,8 +28,11 @@ const steps = [
 ];
 
 const miniFaq = [
-  { q: "What does membership cost?", a: "Quarterly dues cover meals, district fees and administration — full details are in the brochure." },
-  { q: "How often do you meet?", a: "Every Tuesday at 7:30am at the Agbara Community Hall." },
+{
+  q: "What does membership cost?",
+  a: "Annual dues total ₦250,000 (Two Hundred and Fifty Thousand Naira), covering RI per capita dues (at the prevailing RI exchange rate), District per capita dues, District Club dues (including DEWEF, PELS, RYLA, and CLLS), and Club dues.",
+},
+  { q: "How often do you meet?", a: "Every Tuesday at 6:30pm at the De Oasis hotels and suite, Ilaro road, Agbara estate, Agbara, Ogun State." },
   { q: "Can I visit before joining?", a: "Absolutely — guests are welcome any week, no RSVP required." },
 ];
 
@@ -104,13 +107,13 @@ export default function MembershipPage() {
           </Reveal>
           <Reveal delay={0.15}>
             <div className="space-y-5">
-              <div className="glass p-6">
+              {/* <div className="glass p-6">
                 <h3 className="text-ink font-display text-lg">Membership Brochure</h3>
                 <p className="text-ink-soft text-sm mt-2">
                   A short PDF covering dues, meeting schedule and committee options.
                 </p>
                 <ToastButton label="Download Brochure" message="Brochure download started" className="btn-ghost-light mt-3.5" />
-              </div>
+              </div> */}
               <FaqAccordion items={miniFaq} />
             </div>
           </Reveal>

@@ -5,8 +5,8 @@ import type { Project } from "@/lib/data";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="glass overflow-hidden flex flex-col group">
-      <div className="overflow-hidden h-[150px]">
+    <div className="glass overflow-hidden flex flex-col h-full group">
+      <div className="overflow-hidden h-[150px] flex-shrink-0">
         <motion.div
           className="h-full"
           whileHover={{ scale: 1.08 }}
@@ -20,11 +20,11 @@ export default function ProjectCard({ project }: { project: Project }) {
           />
         </motion.div>
       </div>
-      <div className="p-5">
-        <span className="tag">{project.category}</span>
-        <h3 className="font-display text-ink text-[1.08rem] mt-2">{project.title}</h3>
+      <div className="p-5 flex flex-col flex-1">
+        <span className="tag w-fit">{project.category}</span>
+        <h3 className="font-display text-ink text-[1rem] mt-2 leading-snug">{project.title}</h3>
         <p className="text-ink-soft text-sm mt-2">{project.desc}</p>
-        <div className="flex items-center justify-between mt-4">
+        <div className="flex items-center justify-between mt-4 pt-1 mt-auto">
           <span
             className={`text-[0.7rem] font-semibold px-2.5 py-1 rounded-full ${
               project.status === "active"

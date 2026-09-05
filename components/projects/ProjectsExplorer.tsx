@@ -22,7 +22,7 @@ export default function ProjectsExplorer({ projects }: { projects: Project[] }) 
           <button
             key={c}
             onClick={() => setActive(c)}
-            className={`relative chip ${active === c ? "text-white" : ""}`}
+            className={`relative chip ${active === c ? "!text-white" : ""}`}
           >
             {active === c && (
               <motion.span

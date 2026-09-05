@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image, { StaticImageData } from "next/image";
 
+// ImagePlaceholder.tsx — add this prop
 type ImagePlaceholderProps = {
   src: string | StaticImageData;
   alt: string;
@@ -12,7 +13,9 @@ type ImagePlaceholderProps = {
   height?: number;
   sizes?: string;
   objectPosition?: string;
-  zoom?: number; 
+  zoom?: number;
+  unoptimized?: boolean;
+  fit?: "cover" | "contain"; 
 };
 
 function getInitials(name: string) {
@@ -34,6 +37,8 @@ export default function ImagePlaceholder({
   sizes = "(max-width: 768px) 100vw, 400px",
   objectPosition = "center",
   zoom = 1,
+  unoptimized,
+  fit,
 }: ImagePlaceholderProps) {
   const [errored, setErrored] = useState(false);
 
@@ -50,22 +55,22 @@ export default function ImagePlaceholder({
     );
   }
 
-  if (fill) {
+if (fill) {
     return (
-      <div className={`relative overflow-hidden ${className}`}>
+      <div className={`relative overflow-hidden ${fit === "contain" ? "bg-navy-deep" : ""} ${className}`}>
         <Image
           src={src}
           alt={alt}
           fill
           sizes={sizes}
-          className="object-cover"
-          style={{ objectPosition, transform: zoom !== 1 ? `scale(${zoom})` : undefined }}
+          unoptimized={unoptimized}
+          className={fit === "contain" ? "object-contain" : "object-cover"}
+          style={fit === "contain" ? undefined : { objectPosition, transform: zoom !== 1 ? `scale(${zoom})` : undefined }}
           onError={() => setErrored(true)}
         />
       </div>
     );
   }
-
   return (
     <Image
       src={src}

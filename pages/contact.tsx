@@ -3,10 +3,11 @@ import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import { Reveal } from "@/components/motion/Reveal";
 import { TiltCard } from "@/components/motion/TiltCard";
 import { MapPin, Clock, Mail, Phone } from "lucide-react";
+import ContactUs from "../public/contactUs.gif"
 
 const details = [
   { icon: MapPin, text: "De Oasis hotels and suite, Ilaro road, Agbara estate, Agbara, Ogun State" },
-  { icon: Clock, text: "Meetings every Tuesday, 7:30am" },
+  { icon: Clock, text: "Meetings every Tuesday, 7:30pm" },
   { icon: Mail, text: "rcagbara@gmail.com" },
   { icon: Phone, text: "+234 816 922 4603" },
 ];
@@ -23,7 +24,7 @@ export default function ContactPage() {
 
       <div className="grid md:grid-cols-2 gap-5">
         <Reveal>
-          <TiltCard className="glass p-8 h-full">
+          <TiltCard className="rounded-lg  bg-white p-8 h-full">
             <h3 className="text-ink font-semibold text-base mb-4">Details</h3>
             <div className="space-y-3.5 mb-5">
               {details.map((d, i) => {
@@ -38,12 +39,14 @@ export default function ContactPage() {
                 );
               })}
             </div>
-            <ImagePlaceholder
-              src="/images/contact/map.jpg"
-              alt="Map to Agbara Community Hall"
-              label="Map / static map screenshot"
-              className="h-44 rounded-2xl"
-            />
+                  <ImagePlaceholder
+  src={ContactUs}
+  alt="Get in touch"
+  label="Contact illustration"
+  className="w-full h-64 sm:h-72 rounded-2xl"
+  unoptimized
+  fit="contain"
+/>
           </TiltCard>
         </Reveal>
 

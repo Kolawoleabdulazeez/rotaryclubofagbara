@@ -1,105 +1,88 @@
 export type Project = {
   slug: string;
-  category:
-    | "Water"
-    | "Education"
-    | "Health"
-    | "Environment"
-    | "Youth"
-    | "Economic Development";
+  category: "Water" | "Education" | "Health" | "Environment" | "Youth" | "Economic Development";
   status: "active" | "complete";
   title: string;
   desc: string;
   year: number;
-  image: string; // placeholder path, swap with real image later
+  image: string;
+  crop?: string; 
 };
-
 export const projects: Project[] = [
   {
-    slug: "water-for-agbara-phase-4",
+  slug: "salvation-army-school-reconstruction",
+  category: "Education",
+  status: "complete",
+  title: "Reconstruction of Salvation Army Primary School, Idoye",
+  desc: "Full school reconstruction carried out in collaboration with Anochemicals Industries Ltd.",
+  year: 2026,
+  image: "/idoyeSchool.jpeg",
+},
+  {
+    slug: "ijanikin-borehole",
     category: "Water",
-    status: "active",
-    title: "Water for Agbara — Phase 4",
-    desc: "Two new boreholes serving the Eastern Ward, expected completion Q4 2026.",
-    year: 2026,
-    image: "/images/projects/water-phase-4.jpg",
+    status: "complete",
+    title: "Borehole with Water Tanks, Ijanikin",
+    desc: "Clean water infrastructure delivered in collaboration with Rotary Club of Oto-Ijanikin Central.",
+    year: 2025,
+    image: "/images/projects/ijanikin-borehole.jpg",
   },
   {
-    slug: "bright-futures-scholarship",
-    category: "Education",
-    status: "active",
-    title: "Bright Futures Scholarship Fund",
-    desc: "Annual scholarships for 12 secondary school graduates entering university.",
-    year: 2026,
-    image: "/images/projects/scholarship-fund.jpg",
-  },
-  {
-    slug: "mobile-maternal-clinic",
+    slug: "idioke-maternity-ward-renovation",
     category: "Health",
     status: "complete",
-    title: "Mobile Maternal Health Clinic",
-    desc: "A retrofitted van bringing prenatal checkups to three rural wards.",
+    title: "Renovation of Maternity Ward, Idioke",
+    desc: "Full renovation of the maternity ward at Idioke Health Centre.",
     year: 2025,
-    image: "/images/projects/maternal-clinic.jpg",
+    image: "/images/projects/idioke-maternity-renovation.jpg",
   },
   {
-    slug: "shoreline-restoration",
-    category: "Environment",
-    status: "active",
-    title: "Agbara Shoreline Restoration",
-    desc: "Mangrove replanting and shoreline cleanup with 40 volunteer families.",
-    year: 2026,
-    image: "/images/projects/shoreline.jpg",
-  },
-  {
-    slug: "ryla-leadership-camp",
-    category: "Youth",
-    status: "active",
-    title: "RYLA Leadership Camp",
-    desc: "A weekend leadership program for 60 local high schoolers each summer.",
-    year: 2026,
-    image: "/images/projects/ryla-camp.jpg",
-  },
-  {
-    slug: "microloan-circle",
-    category: "Economic Development",
+    slug: "idioke-maternity-equipping",
+    category: "Health",
     status: "complete",
-    title: "Microloan Circle for Market Women",
-    desc: "Seed capital and bookkeeping training for 30 market vendors.",
-    year: 2024,
-    image: "/images/projects/microloan-circle.jpg",
+    title: "Equipping Idioke Maternity Ward",
+    desc: "Mattresses, baby cots, and diapers provided, plus direct support covering four deliveries for indigent mothers.",
+    year: 2025,
+    image: "/images/projects/idioke-maternity-equipping.jpg",
+  },
+  {
+    slug: "fire-station-solar-lighting",
+    category: "Environment",
+    status: "complete",
+    title: "Solar Lighting at Ogun State Fire Station",
+    desc: "Solar lighting installation at the Fire Station along OPIC Estate.",
+    year: 2026,
+    image: "/images/projects/fire-station-solar.jpg",
+  },
+  {
+    slug: "interact-club-charter",
+    category: "Youth",
+    status: "complete",
+    title: "Interact Club Chartered at Agbara Community High School",
+    desc: "A new Interact Club chartered to grow youth engagement in service and leadership.",
+    year: 2025,
+    image: "/images/projects/interact-club-charter.jpg",
   },
 ];
-
 export type EventItem = {
   slug: string;
   day: string;
   month: string;
   title: string;
   venue: string;
-  time: string;
+  time?: string;
   image: string;
 };
 
 export const upcomingEvents: EventItem[] = [
   {
     slug: "annual-charity-gala",
-    day: "12",
-    month: "Aug",
+    day: "05",
+    month: "Sep",
     title: "Fundraising and Investiture Ceremony",
     venue: "Agbara Grand Hotel",
-    time: "6:30 PM",
     image: "/images/events/charity-gala.jpg",
   },
-  {
-    slug: "borehole-groundbreaking",
-    day: "22",
-    month: "Aug",
-    title: "Borehole Groundbreaking — Eastern Ward",
-    venue: "Eastern Ward Community Field",
-    time: "9:00 AM",
-    image: "/images/events/groundbreaking.jpg",
-  }
 ];
 
 export const pastEvents: EventItem[] = [
