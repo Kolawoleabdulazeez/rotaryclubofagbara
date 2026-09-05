@@ -24,7 +24,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         <span className="tag w-fit">{project.category}</span>
         <h3 className="font-display text-ink text-[1rem] mt-2 leading-snug">{project.title}</h3>
         <p className="text-ink-soft text-sm mt-2">{project.desc}</p>
-        <div className="flex items-center justify-between mt-4 pt-1 mt-auto">
+        <div className="flex items-center justify-between mt-4 pt-1">
           <span
             className={`text-[0.7rem] font-semibold px-2.5 py-1 rounded-full ${
               project.status === "active"

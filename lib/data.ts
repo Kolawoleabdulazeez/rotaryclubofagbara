@@ -80,8 +80,8 @@ export const upcomingEvents: EventItem[] = [
     day: "05",
     month: "Sep",
     title: "Fundraising and Investiture Ceremony",
-    venue: "Agbara Grand Hotel",
-    image: "/images/events/charity-gala.jpg",
+    venue: "Alarco  Hotel, Opic Estate Agbara",
+    image: "/alarcs.jpg",
   },
 ];
 
