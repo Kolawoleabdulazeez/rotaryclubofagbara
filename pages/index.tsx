@@ -69,7 +69,7 @@ export default function HomePage() {
     </div>
   </Reveal>
 </section>
-      <section className="py-14">
+      {/* <section className="py-14">
         <div className="max-w-[640px] mb-9">
           <span className="eyebrow">In The News</span>
           <h2 className="font-display text-ink text-[2rem] mt-2.5">Latest from the club.</h2>
@@ -79,7 +79,7 @@ export default function HomePage() {
             <NewsCard key={n.slug} item={n} />
           ))}
         </div>
-      </section>
+      </section> */}
 
       <Testimonials />
       {/* <Sponsors /> */}
