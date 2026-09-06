@@ -74,6 +74,34 @@ export type EventItem = {
   image: string;
 };
 
+const MONTH_MAP: Record<string, number> = {
+  Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+  Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11,
+};
+
+export function getEventDate(event: Pick<EventItem, "day" | "month">): Date | null {
+  const monthIndex = MONTH_MAP[event.month];
+  if (monthIndex === undefined) return null;
+  const day = parseInt(event.day, 10);
+  if (Number.isNaN(day)) return null;
+
+  const now = new Date();
+  return new Date(now.getFullYear(), monthIndex, day);
+}
+
+
+
+export function isEventPast(event: Pick<EventItem, "day" | "month">): boolean {
+  const eventDate = getEventDate(event);
+  if (!eventDate) return false;
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  eventDate.setHours(0, 0, 0, 0);
+
+  return eventDate.getTime() < today.getTime();
+}
+
 export const upcomingEvents: EventItem[] = [
   {
     slug: "annual-charity-gala",
