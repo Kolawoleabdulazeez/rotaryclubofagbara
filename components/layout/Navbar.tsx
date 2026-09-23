@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -11,6 +12,7 @@ const links = [
   { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
   { href: "/events", label: "Events" },
+    { href: "/news", label: "News" },
   { href: "/membership", label: "Membership" },
   { href: "/contact", label: "Contact Us" },
 ];

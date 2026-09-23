@@ -159,36 +159,34 @@ export const heroSlides: MeetingSlide[] = [
     endMinute: 0,
   },
 ];
+
 export type NewsItem = {
   slug: string;
   tag: string;
   title: string;
   desc: string;
   image: string;
+  body: string[];
+  date?: string;      // e.g. "September 5, 2026"
+  pullQuote?: string;  // a standout line from the article
 };
 
 export const news: NewsItem[] = [
   {
-    slug: "phase-3-boreholes",
-    tag: "Impact",
-    title: "Phase 3 Boreholes Now Serving 4,000 Residents",
-    desc: "The Eastern Ward project crossed its first full year of operation with zero downtime.",
-    image: "/images/news/phase-3-boreholes.jpg",
-  },
-  {
-    slug: "new-members-welcome",
+    slug: "new-president-investiture-2026",
     tag: "Club News",
-    title: "Club Welcomes 14 New Members This Quarter",
-    desc: "Our largest induction class in a decade, spanning six professional classifications.",
-    image: "/images/news/new-members.jpg",
+    title: "Rotarian Philip Ebosele Installed as 42nd President",
+    desc: "The club inducted seven new members and unveiled its 'Create Lasting Impact' agenda at the investiture on September 5, 2026.",
+    image: "/RotaryAgbaraInductee.jpg",
+    body: [
+      "Rotary Club of Agbara marked a new chapter of leadership on Saturday, September 5, 2026, with the investiture of Rotarian Philip Osemhanre Ebosele as the club's 42nd President. The ceremony, held at Alarco Hotels and Suites in Agbara, Ogun State, drew Rotarians, district leaders, partners and well-wishers to celebrate the handover.",
+      "President-Elect Rotarian Godwin Ogwara, who chaired the Investiture Planning Committee, framed the occasion as a marker of continuity, noting that the annual transfer of leadership reflects Rotary's living tradition of Service Above Self.",
+      "Taking up the mantle, President Ebosele, known within the club as the 'Impact President,' anchored his administration on the theme 'Create Lasting Impact.' He outlined three pillars guiding his tenure: Impact through Service, Impact through Growth, and Impact through Sustainability, with priorities spanning health, environmental sustainability, education and economic empowerment.",
+      "Ebosele also emphasised stronger collaboration with the club's Rotaract and Interact groups, describing investment in young people as an investment in the club's future, and called on members to contribute their ideas, time and effort to the year ahead.",
+      "The event also saw the induction of seven new members, adding to Rotary Club of Agbara's ongoing membership growth within District 9111. Chairman of the occasion Mr. Macauley Coker-Asin commended the club's track record of health outreaches, school projects and community development, while urging deeper collaboration between Rotary, government agencies, private organisations and civil society groups.",
+    ],
   },
-  {
-    slug: "top-contributing-club",
-    tag: "Recognition",
-    title: "District Names Us Top Contributing Club",
-    desc: "Second year running, our Foundation giving led District 9110.",
-    image: "/images/news/top-contributing-club.jpg",
-  },
+
 ];
 
 export type Leader = {

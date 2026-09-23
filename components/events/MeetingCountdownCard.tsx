@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import type { MeetingSlide } from "@/lib/data";
