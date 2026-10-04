@@ -1,12 +1,14 @@
 export type Project = {
   slug: string;
-  category: "Water" | "Education" | "Health" | "Environment" | "Youth" | "Economic Development";
+  category: string;
   status: "active" | "complete";
   title: string;
   desc: string;
+  details?: string;
   year: number;
-  image: string;
-  crop?: string; 
+  image: string;          
+  images?: { src: string; alt?: string; crop?: string }[];  
+  crop?: string;
 };
 export const projects: Project[] = [
   {
@@ -19,14 +21,19 @@ export const projects: Project[] = [
   image: "/idoyeSchool.jpeg",
 },
   {
-    slug: "ijanikin-borehole",
-    category: "Water",
-    status: "complete",
-    title: "Borehole with Water Tanks, Ijanikin",
-    desc: "Clean water infrastructure delivered in collaboration with Rotary Club of Oto-Ijanikin Central.",
-    year: 2025,
-    image: "/images/projects/ijanikin-borehole.jpg",
-  },
+  slug: "back-to-school-project",
+  category: "Education",
+  status: "complete",
+  title: "Back to School Project Across Agbara and Idanyin",
+  desc: "Educational outreach providing learning materials and mentorship to students across three schools in Agbara and Idanyin.",
+  details: "An educational outreach initiative carried out by the Rotary Club of Agbara in partnership with the District 9111 Interact Representatives to promote access to basic education and empower young learners across Ogun State. The project provided essential learning materials and educational resources to hundreds of students at Agbara Community High School (Edu), Idanyin Primary School, and Idanyin Comprehensive High School. In collaboration with the Rotaract Club of Agbara Golden, the Rotaract Club of Okokomaiko, and Seed of Hope, the initiative aimed to ease the financial burden on parents, address learning resource gaps in underserved schools, and encourage students to remain committed to their education. The outreach also featured interactive mentorship sessions led by Rotary members, Rotaractors, and Interactors, focusing on academic excellence, discipline, civic responsibility, youth leadership, and perseverance. Through this intervention, the Rotary Club of Agbara reaffirmed its commitment to strengthening educational opportunities, supporting local communities, and inspiring the next generation of responsible leaders.",
+  year: 2026,
+   image: "/backToSchoolProject.jpeg",
+  images: [
+    { src: "/backToSchoolProject.jpeg", crop: "center" },
+    { src: "/backToSchoolProject2.jpeg" }, 
+  ],
+},
   {
     slug: "idioke-maternity-ward-renovation",
     category: "Health",
