@@ -4,8 +4,16 @@ import { Reveal, RevealGroup, itemVariant } from "@/components/motion/Reveal";
 import { TiltCard } from "@/components/motion/TiltCard";
 import { motion } from "framer-motion";
 import { CheckCircle2, Scale, Heart, TrendingUp } from "lucide-react";
+import Image from "next/image";
+
 
 const values = ["Acquaintance", "Ethics", "Service", "Peace"];
+
+const awards = [
+  "District Presidential Citation (2022, 2023)",
+  "Rotary Foundation Top Contributing Club, District 9110 (2024)",
+  "2nd highest Rotary Foundation contribution among clubs in the district, August 2026",
+];
 
 const fourWayTest = [
   { icon: CheckCircle2, q: "Is it the TRUTH?" },
@@ -133,28 +141,55 @@ export default function AboutPage() {
         <LeadershipGrid />
       </section>
 
-      <section className="py-14">
-        <RevealGroup className="grid md:grid-cols-2 gap-5" stagger={0.15}>
-          <motion.div variants={itemVariant}>
-            <div className="glass p-6">
-              <span className="eyebrow">Affiliations</span>
-              <p className="text-ink-soft mt-3 text-sm">
-                Rotary International · District 9110 · Agbara Chamber of Commerce ·
-                United Way of Agbara
-              </p>
-            </div>
-          </motion.div>
-          <motion.div variants={itemVariant}>
-            <div className="glass p-6">
-              <span className="eyebrow">Awards & Recognition</span>
-              <p className="text-ink-soft mt-3 text-sm">
-                District Presidential Citation (2022, 2023) · Rotary Foundation Top
-                Contributing Club, District 9110 (2024)
-              </p>
-            </div>
-          </motion.div>
-        </RevealGroup>
-      </section>
+   <section className="py-14">
+  <Reveal>
+    <div className="max-w-[640px] mb-8">
+      <span className="eyebrow">Awards &amp; Recognition</span>
+      <h2 className="font-display text-ink text-[2rem] mt-2.5">Recognized by the district.</h2>
+    </div>
+  </Reveal>
+
+  <RevealGroup className="grid md:grid-cols-[minmax(0,340px)_1fr] gap-6 items-center" stagger={0.15}>
+    <motion.div variants={itemVariant}>
+      <div className="glass p-3">
+        <Image
+          src="/Award.jpeg"
+          alt="Certificate of Recognition presented to Rotary Club of Agbara for the 2nd highest contribution to The Rotary Foundation in District 9111, August 2026"
+          width={1062}
+          height={1280}
+          className="w-full h-auto rounded-lg"
+        />
+      </div>
+    </motion.div>
+
+    <motion.div variants={itemVariant}>
+      <div className="glass p-7">
+        <h3 className="font-display text-ink text-xl">
+          2nd highest contribution to The Rotary Foundation
+        </h3>
+        <p className="text-ink-soft mt-3 text-sm">
+          Among all clubs in the district for the month of August 2026, in recognition of
+          the club&apos;s giving to The Rotary Foundation.
+        </p>
+        <p className="text-ink-soft mt-4 text-xs">
+          Presented by District Governor Bukola Bakare and the district Awards and
+          Recognition Committee, 9 September 2026.
+        </p>
+      </div>
+    </motion.div>
+  </RevealGroup>
+</section>
+
+<section className="pb-14">
+  <Reveal>
+    <div className="glass p-6">
+      <span className="eyebrow">Affiliations</span>
+      <p className="text-ink-soft mt-3 text-sm">
+        Rotary International · District 9110 · Agbara Chamber of Commerce · United Way of Agbara
+      </p>
+    </div>
+  </Reveal>
+</section>
     </>
   );
 }

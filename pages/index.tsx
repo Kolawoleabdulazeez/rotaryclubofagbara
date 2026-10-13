@@ -12,8 +12,13 @@ import Link from "next/link";
 import { Reveal, RevealGroup, itemVariant } from "@/components/motion/Reveal";
 import { TiltCard } from "@/components/motion/TiltCard";
 import { motion } from "framer-motion";
-import MeetingCountdownCard from "@/components/events/MeetingCountdownCard";
 import MeetingRow from "@/components/events/MeetingRow";
+import AnnouncementModal from "@/components/ui/AnnouncementModal";
+
+const slides = [
+  { src: "/100daysInOffice.png", alt: "President's achievements" },
+  { src: "/Award.jpeg", alt: "District award", caption: "..." },
+];
 
 export default function HomePage() {
   return (
@@ -84,6 +89,8 @@ export default function HomePage() {
       <Testimonials />
       {/* <Sponsors /> */}
       <Newsletter />
+
+      <AnnouncementModal slides={slides} />
     </>
   );
 }
