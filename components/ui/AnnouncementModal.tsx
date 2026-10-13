@@ -4,8 +4,7 @@ import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
-type Slide = { src: string; alt: string; caption?: string };
-
+type Slide = { src: string; mobileSrc?: string; alt: string; caption?: string };
 // Resets on full reload, persists across client-side navigation
 let shownThisLoad = false;
 
@@ -102,25 +101,34 @@ export default function AnnouncementModal({
             className="flex flex-col items-center gap-3 px-4"
             onClick={(e) => e.stopPropagation()}
           >
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={index}
-                src={slide.src}
-                alt={slide.alt}
-                className="max-h-[80vh] max-w-[92vw] w-auto h-auto rounded-xl object-contain shadow-2xl"
-                initial={{ opacity: 0, scale: 0.97 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.97 }}
-                transition={{ duration: 0.2 }}
-                drag={multiple ? "x" : false}
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={0.2}
-                onDragEnd={(_, info) => {
-                  if (info.offset.x < -80) next();
-                  else if (info.offset.x > 80) prev();
-                }}
-              />
-            </AnimatePresence>
+         <AnimatePresence mode="wait">
+  <motion.div
+    key={index}
+    initial={{ opacity: 0, scale: 0.97 }}
+    animate={{ opacity: 1, scale: 1 }}
+    exit={{ opacity: 0, scale: 0.97 }}
+    transition={{ duration: 0.2 }}
+    drag={multiple ? "x" : false}
+    dragConstraints={{ left: 0, right: 0 }}
+    dragElastic={0.2}
+    onDragEnd={(_, info) => {
+      if (info.offset.x < -80) next();
+      else if (info.offset.x > 80) prev();
+    }}
+  >
+    <picture>
+      {slide.mobileSrc && (
+        <source media="(orientation: portrait)" srcSet={slide.mobileSrc} />
+      )}
+      <img
+        src={slide.src}
+        alt={slide.alt}
+        draggable={false}
+        className="max-h-[80vh] max-w-[92vw] w-auto h-auto rounded-xl object-contain shadow-2xl"
+      />
+    </picture>
+  </motion.div>
+</AnimatePresence>
 
             {slide.caption && (
               <p className="max-w-[560px] text-center text-sm text-white/90">{slide.caption}</p>

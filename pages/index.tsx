@@ -16,8 +16,15 @@ import MeetingRow from "@/components/events/MeetingRow";
 import AnnouncementModal from "@/components/ui/AnnouncementModal";
 
 const slides = [
-  { src: "/100daysInOffice.png", alt: "President's achievements" },
-  { src: "/Award.jpeg", alt: "District award", caption: "..." },
+  {
+    src: "/100daysInOffice.png",
+    mobileSrc: "/100daysInOffice.jpeg",
+    alt: "Rotarian Philip Ebosele, President of the Rotary Club of Agbara: projects completed in his first 100 days in office",
+  },
+  {
+    src: "/Award.jpeg",
+    alt: "Certificate of Recognition: 2nd highest contribution to The Rotary Foundation in District 9111, August 2026",
+  },
 ];
 
 export default function HomePage() {
